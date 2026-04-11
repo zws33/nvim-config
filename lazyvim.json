@@ -1,0 +1,24 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.ai.claudecode",
+    "lazyvim.plugins.extras.coding.mini-surround",
+    "lazyvim.plugins.extras.editor.neo-tree",
+    "lazyvim.plugins.extras.formatting.prettier",
+    "lazyvim.plugins.extras.lang.java",
+    "lazyvim.plugins.extras.lang.json",
+    "lazyvim.plugins.extras.lang.kotlin",
+    "lazyvim.plugins.extras.lang.markdown",
+    "lazyvim.plugins.extras.lang.prisma",
+    "lazyvim.plugins.extras.lang.tailwind",
+    "lazyvim.plugins.extras.lang.tex",
+    "lazyvim.plugins.extras.lang.typescript",
+    "lazyvim.plugins.extras.dap.core",
+    "lazyvim.plugins.extras.linting.eslint",
+    "lazyvim.plugins.extras.test.core"
+  ],
+  "install_version": 8,
+  "news": {
+    "NEWS.md": "11866"
+  },
+  "version": 8
+}
