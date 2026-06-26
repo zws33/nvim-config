@@ -6,6 +6,9 @@ return {
         enabled = true, -- keep enabled so you can trigger it manually
         auto_open = false, -- <== this stops the insert-mode popup
       },
+      progress = {
+        enabled = false, -- silence pyright/LSP progress toasts in the corner
+      },
     },
   },
 }
