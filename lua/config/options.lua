@@ -6,6 +6,3 @@ vim.g.lazyvim_python_lsp = "basedpyright"
 -- reformatting files in repos that use a different style (or none), which
 -- would otherwise produce large, unrequested diffs on save.
 vim.g.lazyvim_prettier_needs_config = true
-vim.g.dbs = {
-  { name = "dev", url = "postgresql://postgres:postgres@localhost:5432/tasks?sslmode=disable" },
-}
