@@ -38,6 +38,8 @@ Format a file:
 stylua lua/plugins/myplugin.lua
 ```
 
+Markdown files (including this one) are linted with **markdownlint-cli2** per `.markdownlint-cli2.jsonc`, which disables MD013 (line length), MD033 (inline HTML), MD024 (duplicate headings), and MD022 (blanks around headings).
+
 ## Architecture
 
 ### Entry point
@@ -53,20 +55,8 @@ stylua lua/plugins/myplugin.lua
 
 - **`lua/plugins/`** — Plugin specs. Each file returns a table of lazy.nvim plugin specs. Files here override or extend LazyVim's built-in plugin configs.
 
-### LazyVim extras
-
-Active extras are declared in `lazyvim.json`. Current extras:
-- AI: `claudecode`
-- Editor: `diffview`, `neo-tree`
-- Formatting: `prettier`
-- Lang: `json`, `markdown`, `tailwind`, `typescript`
-- Linting: `eslint`
-- Testing: `core`, `vitest`
-
-To enable a new extra, add it to `lazyvim.json` rather than manually configuring the underlying plugins.
-
 ### Customizing plugins
 
-To override a LazyVim plugin, create a file in `lua/plugins/` that returns a spec with the same plugin name and an `opts` table or `config` function. See `lua/plugins/neo-tree.lua` for an example.
+To override a LazyVim plugin, create a file in `lua/plugins/` that returns a spec with the same plugin name and an `opts` table or `config` function. See `lua/plugins/noice.lua` for an example.
 
 To disable a LazyVim plugin: `{ "plugin/name", enabled = false }`.
