@@ -21,8 +21,8 @@ return {
     },
 
     -- Indent guides + animated current-scope highlight. The scope line is
-    -- colored by catppuccin's `indent_scope_color = "lavender"` (set in
-    -- colorscheme.lua → SnacksIndentScope). `style = "out"` animates the
+    -- colored by the active theme's SnacksIndentScope override (see the
+    -- `overrides` block in kanagawa.lua). `style = "out"` animates the
     -- scope outward from the cursor when you move into a new block.
     indent = {
       indent = { char = "│" },

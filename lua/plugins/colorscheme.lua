@@ -2,7 +2,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     opts = {
       flavour = "mocha",
@@ -30,9 +30,6 @@ return {
         inlay_hints = { background = true },
       },
 
-      -- LazyVim already enables most integrations (snacks, telescope, gitsigns,
-      -- neotest, neo-tree, noice, mason, treesitter_context, which_key, …).
-      -- These are the deltas worth setting for this config's extras/workflow.
       integrations = {
         diffview = true, -- you have the diffview extra; off by default in catppuccin
         dap = true, -- Python/JS debugging UI theming
@@ -61,16 +58,10 @@ return {
       end,
     },
 
-    -- Apply the colorscheme *after* setup() so our opts are loaded before
-    -- catppuccin paints the screen. Without this, LazyVim runs
-    -- `colorscheme catppuccin` before setup() and the screen keeps defaults.
+    -- Don't auto-apply; this is now a backup colorscheme
+    -- Can be activated manually with :colorscheme catppuccin
     config = function(_, opts)
       require("catppuccin").setup(opts)
-      vim.cmd.colorscheme("catppuccin")
     end,
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = { colorscheme = "catppuccin" },
   },
 }

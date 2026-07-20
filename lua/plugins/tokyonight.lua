@@ -1,12 +1,12 @@
 -- Tokyonight, configured to mirror the catppuccin frappe setup in
 -- colorscheme.lua so you can A/B the two. This installs tokyonight alongside
--- catppuccin but does NOT make it active — catppuccin stays the default.
+-- the other themes but does NOT make it active — kanagawa is the default.
 --
 -- To compare, switch live:
 --   :colorscheme tokyonight-moon   (this config)
---   :colorscheme catppuccin        (your default)
--- To make tokyonight the permanent default, set colorscheme = "tokyonight-moon"
--- in the LazyVim spec at the bottom of colorscheme.lua.
+--   :colorscheme kanagawa          (your default)
+-- To make tokyonight the permanent default, point the LazyVim spec's
+-- `colorscheme` at "tokyonight-moon" (see kanagawa.lua for the pattern).
 --
 -- Why no `config`-function fix like catppuccin needs: tokyonight's `load()`
 -- recomputes highlights live from its options on every call, so opts always
