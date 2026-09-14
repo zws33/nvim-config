@@ -3,6 +3,8 @@
     "MD013": false,
     "MD033": false,
     "MD024": false,
-    "MD022": false
+    "MD022": false,
+    // table-column-style: pipe alignment/padding only, no effect on rendering
+    "MD060": false
   }
 }
