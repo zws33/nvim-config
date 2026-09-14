@@ -1,4 +1,4 @@
--- Tokyonight, configured to mirror the catppuccin frappe setup in
+-- Tokyonight, configured to mirror the catppuccin mocha setup in
 -- colorscheme.lua so you can A/B the two. This installs tokyonight alongside
 -- the other themes but does NOT make it active — kanagawa is the default.
 --
@@ -14,12 +14,12 @@
 return {
   "folke/tokyonight.nvim",
   -- lazy: tokyonight is NOT the active theme, so keep it out of the startup
-  -- load order (a second lazy=false/priority=1000 colorscheme perturbs when
-  -- catppuccin's setup runs and can bump it off frappe). lazy.nvim loads this
+  -- load order (a second lazy=false/priority=1000 colorscheme perturbs the
+  -- startup load order and can end up applying over kanagawa). lazy.nvim loads this
   -- on demand the moment you run `:colorscheme tokyonight-moon`.
   lazy = true,
   opts = {
-    -- "moon" is the closest analogue to frappe: a soft, mid-dark variant.
+    -- "moon" is a soft, mid-dark variant.
     -- (storm = brighter, night = darkest, day = light/latte equivalent.)
     style = "moon",
     light_style = "day", -- the latte equivalent for :set background=light
@@ -45,8 +45,8 @@ return {
       floats = "dark",
     },
 
-    -- Resolved palette tweaks. `c` is the moon palette (theme-consistent),
-    -- mirroring catppuccin's `color_overrides`. Left empty by default.
+    -- Resolved palette tweaks. `colors` is the moon palette (theme-consistent),
+    -- analogous to catppuccin's `color_overrides` option. Left empty by default.
     on_colors = function(colors)
       -- Example: colors.comment = colors.blue1
     end,
@@ -54,7 +54,7 @@ return {
     -- Highlight overrides — the tokyonight equivalent of catppuccin's
     -- `custom_highlights`. `hl` is the highlight table, `c` the palette.
     on_highlights = function(hl, c)
-      -- Frappe nudged comments brighter; do the same here. tokyonight's
+      -- The catppuccin config nudges comments brighter; do the same here. tokyonight's
       -- default comment grey is dim — bump it and keep the italic.
       hl.Comment = { fg = c.dark5, italic = true }
 
@@ -64,7 +64,7 @@ return {
       hl.Type = { fg = c.blue1, italic = true }
 
       -- Accent the floating-window borders (LSP hovers, which-key, snacks
-      -- pickers) with blue — the moon analogue to frappe's lavender.
+      -- pickers) with blue — the moon analogue to catppuccin's lavender.
       hl.FloatBorder = { fg = c.blue, bg = c.bg_float }
 
       -- Stronger, unmistakable visual selection (catppuccin used surface1 + bold).
@@ -81,7 +81,7 @@ return {
 
     -- tokyonight auto-styles most plugins; it has no per-integration toggle
     -- list like catppuccin. The `plugins` table can force-enable/disable
-    -- specific ones, but auto-detection covers your extras (diffview, dap,
+    -- specific ones, but auto-detection covers your extras (dap,
     -- render-markdown, illuminate, snacks, neo-tree, etc.) out of the box.
   },
 }

@@ -6,8 +6,8 @@ return {
     priority = 1000,
     opts = {
       flavour = "mocha",
-      -- Lock frappe for dark and latte for light, so a `:set background`
-      -- flip (or a terminal that reports light) can't bump you off frappe.
+      -- Lock mocha for dark and latte for light, so a `:set background`
+      -- flip (or a terminal that reports light) can't bump you off mocha.
       background = { dark = "mocha", light = "latte" },
 
       -- Make :terminal buffers (dev servers, REPLs, test watchers) use the
@@ -31,22 +31,22 @@ return {
       },
 
       integrations = {
-        diffview = true, -- you have the diffview extra; off by default in catppuccin
+        diffview = true, -- off by default in catppuccin; no-op unless diffview.nvim is installed
         dap = true, -- Python/JS debugging UI theming
         dap_ui = true,
         render_markdown = true, -- markdown extra preview rendering
         illuminate = { enabled = true, lsp = true }, -- LSP-aware word highlight
         -- Snacks is already enabled by LazyVim's catppuccin spec; declaring it
         -- here lets us color the animated indent-scope guide. "lavender" is the
-        -- frappe accent — swap for mauve/sky/teal/peach to taste.
+        -- mocha accent — swap for mauve/sky/teal/peach to taste.
         snacks = { enabled = true, indent_scope_color = "lavender" },
       },
 
-      -- A few popular readability tweaks. `colors` is the resolved frappe
+      -- A few popular readability tweaks. `colors` is the resolved flavour
       -- palette, so these stay theme-consistent.
       custom_highlights = function(colors)
         return {
-          -- Frappe's default comment grey is dim; nudge it brighter. Keep the
+          -- catppuccin's default comment grey is dim; nudge it brighter. Keep the
           -- italic from `styles.comments` by re-declaring it here.
           Comment = { fg = colors.overlay2, italic = true },
           -- Theme floating-window borders to the lavender accent instead of

@@ -3,7 +3,6 @@ return {
     "stevearc/conform.nvim",
     opts = function(_, opts)
       opts.formatters_by_ft = opts.formatters_by_ft or {}
-
       -- Run in order:
       -- 1) fix autofixable Ruff issues
       -- 2) organize imports
@@ -12,8 +11,6 @@ return {
       -- This gives you behavior closer to:
       --   ruff check --fix
       --   ruff format
-      --
-      -- If you ever want Black instead, replace ruff_format with "black".
       opts.formatters_by_ft.python = {
         "ruff_fix",
         "ruff_organize_imports",

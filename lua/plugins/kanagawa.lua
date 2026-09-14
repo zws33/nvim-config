@@ -1,7 +1,7 @@
 -- kanagawa.nvim — PRIMARY COLORSCHEME
 -- https://github.com/rebelot/kanagawa.nvim
 --
--- Variants: wave (default, warm mid-dark), dragon (darker/desaturated),
+-- Variants: wave (upstream default, warm mid-dark), dragon (darker/desaturated),
 -- lotus (light). Switch live with :colorscheme kanagawa-{wave,dragon,lotus}.
 --
 -- Unlike catppuccin, kanagawa has no per-plugin `integrations` toggle list —
@@ -16,7 +16,7 @@ return {
     priority = 1000,
     opts = {
       theme = "dragon", -- wave, dragon, lotus
-      -- Lock wave for dark and lotus for light, so a `:set background` flip
+      -- Lock dragon for dark and lotus for light, so a `:set background` flip
       -- (or a terminal reporting light) can't bump you somewhere unexpected.
       background = { dark = "dragon", light = "lotus" },
 
