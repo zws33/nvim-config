@@ -79,11 +79,9 @@ return {
         }
       end,
     },
-    config = function(_, opts)
-      require("kanagawa").setup(opts)
-      vim.cmd.colorscheme("kanagawa")
-    end,
   },
+  -- Single source of truth for the startup theme. Without this, LazyVim's
+  -- default loads and applies tokyonight before any other theme.
   {
     "LazyVim/LazyVim",
     opts = { colorscheme = "kanagawa" },
