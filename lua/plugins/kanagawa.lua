@@ -1,9 +1,3 @@
--- kanagawa.nvim — PRIMARY COLORSCHEME
--- https://github.com/rebelot/kanagawa.nvim
---
--- Variants: wave (upstream default, warm mid-dark), dragon (darker/desaturated),
--- lotus (light). Switch live with :colorscheme kanagawa-{wave,dragon,lotus}.
---
 -- Unlike catppuccin, kanagawa has no per-plugin `integrations` toggle list —
 -- it ships highlights for a fixed set of plugins (neo-tree, neotest, dap-ui,
 -- blink.cmp, mini.*, telescope, gitsigns, notify, treesitter-context, trouble)
@@ -16,8 +10,6 @@ return {
     priority = 1000,
     opts = {
       theme = "dragon", -- wave, dragon, lotus
-      -- Lock dragon for dark and lotus for light, so a `:set background` flip
-      -- (or a terminal reporting light) can't bump you somewhere unexpected.
       background = { dark = "dragon", light = "lotus" },
 
       -- Bytecode-compile the highlight tables for faster startup. Re-run
@@ -26,14 +18,12 @@ return {
 
       undercurl = true,
       transparent = false,
-      dimInactive = false, -- set true to dim non-focused splits
+      dimInactive = true,
 
       -- Themes :terminal buffers (dev servers, REPLs, test watchers) with the
       -- kanagawa palette instead of your terminal's raw 16 colors.
       terminalColors = true,
 
-      -- Mirrors the italics from the catppuccin setup. kanagawa exposes
-      -- per-token-class style tables rather than a single `styles` block.
       commentStyle = { italic = true },
       keywordStyle = { italic = true },
       statementStyle = { bold = true },
