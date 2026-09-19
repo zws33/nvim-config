@@ -43,9 +43,7 @@ return {
       top_down = false, -- stack from the bottom-right, out of the way of code
     },
 
-    -- Inline image rendering for markdown/docs (you have the markdown extra).
-    -- Requires a terminal with a graphics protocol: Kitty, WezTerm, or Ghostty.
-    -- On other terminals this silently no-ops, so it's safe to leave enabled.
+    -- Needs Kitty/WezTerm/Ghostty graphics protocol; no-ops elsewhere.
     image = { enabled = true },
 
     -- Two-pane "doom" dashboard. Header is overridden below; keys come from
