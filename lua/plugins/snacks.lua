@@ -11,10 +11,6 @@ return {
   },
   opts = {
     picker = {
-      -- Bottom panel layout
-      layout = {
-        preset = "ivy",
-      },
       -- Float frequently/recently used and cwd-local results to the top
       matcher = {
         frecency = true,
