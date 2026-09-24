@@ -37,7 +37,7 @@ When answering "how do I / does my config support" questions, identify which lay
 
 ## Constraints and non-obvious behavior
 
-- **Colorschemes:** kanagawa (`dragon` dark / `lotus` light) is the only `lazy = false` theme and is set via the LazyVim spec in `lua/plugins/kanagawa.lua`. catppuccin and tokyonight are backups and must stay `lazy = true`; a second eager `priority = 1000` theme changes startup load order and can apply over the default.
+- **Colorschemes:** tokyonight (`moon` dark / `day` light) is the only `lazy = false` theme and is set via the LazyVim spec in `lua/plugins/tokyonight.lua`. The spec uses `colorscheme = "tokyonight"` (not `tokyonight-moon`) so `load()` honors `style`/`light_style` on a `:set background` flip. kanagawa and catppuccin are backups and must stay `lazy = true`; a second eager `priority = 1000` theme changes startup load order and can apply over the default.
 - **Kanagawa compile:** `compile = true` caches highlights. Run `:KanagawaCompile` after editing `kanagawa.lua` or changes will not appear.
 - **Theme overrides stay palette-derived:** kanagawa overrides and `lua/plugins/bufferline.lua` read `require("kanagawa.colors").setup().theme` instead of hex values so they work across variants. `bufferline.lua` branches on `vim.g.colors_name` per theme.
 - **Override specs for extra-provided plugins** should set `optional = true` (see `bufferline.lua`); without it, the spec installs the plugin even when its extra is disabled.

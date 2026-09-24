@@ -6,8 +6,9 @@
 return {
   {
     "rebelot/kanagawa.nvim",
-    lazy = false,
-    priority = 1000,
+    -- Backup theme: tokyonight is the default (see tokyonight.lua). Keep this
+    -- lazy so a second eager priority = 1000 theme can't apply over it.
+    lazy = true,
     opts = {
       theme = "dragon", -- wave, dragon, lotus
       background = { dark = "dragon", light = "lotus" },
@@ -69,11 +70,5 @@ return {
         }
       end,
     },
-  },
-  -- Single source of truth for the startup theme. Without this, LazyVim's
-  -- default loads and applies tokyonight before any other theme.
-  {
-    "LazyVim/LazyVim",
-    opts = { colorscheme = "kanagawa" },
   },
 }
