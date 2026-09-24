@@ -6,6 +6,8 @@ return {
     { "<leader>z", function() Snacks.zen() end, desc = "Zen Mode" },
     -- Zoom: maximize the current window without closing the others.
     { "<leader>Z", function() Snacks.zen.zoom() end, desc = "Zoom" },
+    -- Override <leader>e to always open in the CWD instead of automatic root discovery
+    { "<leader>e", function() Snacks.explorer({ cwd = vim.fn.getcwd() }) end, desc = "Explorer (CWD)" },
   },
   opts = {
     picker = {
