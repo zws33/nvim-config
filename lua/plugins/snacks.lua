@@ -19,9 +19,9 @@ return {
     },
 
     -- Indent guides + animated current-scope highlight. The scope line is
-    -- colored by the active theme's SnacksIndentScope override (see the
-    -- `on_highlights` block in tokyonight.lua). `style = "out"` animates the
-    -- scope outward from the cursor when you move into a new block.
+    -- colored by catppuccin's `snacks.indent_scope_color` integration option
+    -- (see catppuccin.lua). `style = "out"` animates the scope outward from the
+    -- cursor when you move into a new block.
     indent = {
       indent = { char = "│" },
       scope = { char = "│", underline = false },
