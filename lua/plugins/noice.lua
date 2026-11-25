@@ -3,11 +3,9 @@ return {
   opts = {
     lsp = {
       hover = {
-        -- noice replaces vim.lsp.buf.hover with a per-client fan-out and notifies
-        -- "No information available" for every client that returns nothing, so
-        -- tailwindcss attached alongside vtsls adds a toast to each TS hover.
-        -- Neovim's own hover aggregates instead. Cost: hovering where no client
-        -- has docs is now silent.
+        -- noice toasts "No information available" per client that returns
+        -- nothing, which tailwindcss does on every TS hover. K is now silent
+        -- when no client has docs.
         silent = true,
       },
       signature = {
@@ -15,6 +13,20 @@ return {
       },
       progress = {
         enabled = false, -- silence pyright/LSP progress toasts in the corner
+      },
+    },
+
+    -- Border on the `hover` view, shared by hover and signature help.
+    presets = {
+      lsp_doc_border = true,
+    },
+
+    views = {
+      hover = {
+        win_options = {
+          -- Hover only; other floats keep NormalFloat's mantle.
+          winhighlight = { Normal = "NoiceHoverNormal", FloatBorder = "NoiceHoverBorder" },
+        },
       },
     },
   },

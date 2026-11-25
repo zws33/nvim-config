@@ -61,6 +61,11 @@ return {
       custom_highlights = function(colors)
         return {
           FloatBorder = { fg = colors.lavender },
+
+          -- Noice's hover view only; other floats keep the mantle. Border
+          -- takes the same bg or the rounded corners show through.
+          NoiceHoverNormal = { bg = colors.surface0, fg = colors.text },
+          NoiceHoverBorder = { bg = colors.surface0, fg = colors.lavender },
         }
       end,
     },
